@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('camara_id')->constrained('camaras')->onDelete('cascade');
             $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
-            $table->enum('tipo', ['movimiento', 'intrusion', 'sabotaje', 'otro']);
+            $table->string('tipo');
             $table->text('descripcion');
             $table->dateTime('fecha_hora');
             $table->timestamps();

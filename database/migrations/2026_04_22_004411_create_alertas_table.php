@@ -12,8 +12,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('evento_id')->constrained('eventos')->onDelete('cascade');
             $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
-            $table->enum('nivel', ['baja', 'media', 'alta', 'critica']);
-            $table->enum('estado', ['pendiente', 'atendida', 'descartada'])->default('pendiente');
+            $table->string('nivel');
+            $table->string('estado')->default('pendiente');
             $table->text('mensaje');
             $table->timestamps();
         });

@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('ubicacion');
             $table->string('ip')->unique();
-            $table->enum('estado', ['activa', 'inactiva', 'falla'])->default('activa');
+            $table->string('estado')->default('activa');
             $table->timestamps();
         });
     }
